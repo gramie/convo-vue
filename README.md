@@ -1,3 +1,3 @@
 # vue-b8s7se
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vue-b8s7se)
+Front end for foreign language conversation tutor.
