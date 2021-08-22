@@ -1,4 +1,5 @@
 <template>
+  <SingleLine />
   <div v-bind:class="getSpeaker()">
     <div class="line selected-line" v-if="line.selected">
       <div class="speak-button"><i class="fas fa-play"></i></div>
@@ -16,8 +17,13 @@
 </template>
 
 <script>
+import SingleLine from './SingleLine.vue';
 
 export default {
+  name: 'Line',
+  components: {
+    SingleLine,
+  },
   props: {
       line: Object,      
   },
