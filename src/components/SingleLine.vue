@@ -1,7 +1,7 @@
 <template>
   <div class="single-line">
     <div class="speak-button"><i class="fas fa-play"></i></div>
-    <div class="line-text">{{line.text}}</div>
+    <div v-bind:class="getLineClass()" @click="selectLine()">{{line.text}}</div>
     <button v-show="isTextBlurred" @click="unblurText()"><i class="fas fa-eye"></i></button>
   </div>
 </template>
@@ -10,6 +10,7 @@
 export default {
   name: 'SingleLine',
   props: {
+      id : String,
       line: Object,
       speaker : Number,
       displayClearText : Boolean,
@@ -17,7 +18,7 @@ export default {
   data() {
     return {
       key: "nothing",
-      isTextBlurred : true
+      isTextBlurred : false
     }
   },
   mounted () {
@@ -30,6 +31,9 @@ export default {
     },
     unblurText() {
       this.isTextBlurred = false;
+    },
+    selectLine() {
+      this.$emit('line-selected');
     }
   }
 }
@@ -37,7 +41,7 @@ export default {
 
 <style scoped>
 .blurred {
-  filter: blur('4px');
+  filter: blur(4px);
 }
 
 

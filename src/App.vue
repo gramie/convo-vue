@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Conversation convo="glorious" />
+    <Conversation convo="glorious" v-bind:difficulty="3" />
   </div>
 </template>
 

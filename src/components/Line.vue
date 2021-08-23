@@ -5,7 +5,7 @@
       </div>
       <div v-else>
         <template v-for="(option, id) in line.options">
-          <SingleLine v-bind:line="option" v-bind:speaker="this.speaker" v-bind:displayClearText="false" />
+          <SingleLine v-bind:line="option" v-bind:id="id" v-bind:speaker="this.speaker" v-bind:displayClearText="false" v-on:line-selected="selectLine"/>
         </template>
       </div>
     </div>

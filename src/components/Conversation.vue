@@ -17,7 +17,8 @@ export default {
     Line
   },
   props: {
-    convo: String
+    convo: String,
+    difficulty: Number,
   },
   data() {
     return {
