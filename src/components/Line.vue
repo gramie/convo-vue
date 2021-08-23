@@ -1,17 +1,13 @@
 <template>
-  <SingleLine />
-  <div v-bind:class="getSpeaker()">
-    <div class="line selected-line" v-if="line.selected">
-      <div class="speak-button"><i class="fas fa-play"></i></div>
-      <span class="line-text" v-bind:title="line.options[line.selected].translation['en']">{{line.options[line.selected].text}}</span>
-    </div>
-    <div v-else>
-      <template v-for="(option, id) in line.options">
-        <div class="line available-line">
-          <div class="speak-button"><i class="fas fa-play"></i></div>
-          <div class="line-text" @click="selectLine(id)"> {{option.text}} </div>
-        </div>
-      </template>
+  <div>
+    <div v-bind:class="getSpeaker()">
+      <div class="line selected-line" v-if="line.selected">
+      </div>
+      <div v-else>
+        <template v-for="(option, id) in line.options">
+          <SingleLine v-bind:line="option" v-bind:speaker="this.speaker" v-bind:displayClearText="false" />
+        </template>
+      </div>
     </div>
   </div>
 </template>
@@ -61,30 +57,4 @@ export default {
 .speaker-2 {
   text-align: right;
 }
-.line {
-  display: block;
-}
-.selected-line {
-  border: 1px solid gray;
-  background-color: #FEF;
-  color: blue;
-}
-.line-text {
-  display: inline-block;
-}
-
-.speak-button {
-  border-radius: 50%;
-  background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px 10px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2px 2px;
-  cursor: pointer;
-}
-
 </style>

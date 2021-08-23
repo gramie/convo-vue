@@ -1,7 +1,7 @@
 <template>
   <h2>{{convoName}}</h2>
 
-  <audio controls />
+  <audio controls src="http://www.stillbrook.org/audio/office_ambience.mp3" />
   <div v-for="convoline in lines">
     <Line v-bind:line="convoline" v-if="convoline.visible" @selectLine="onNextLine" />
   </div>
@@ -33,15 +33,11 @@ export default {
           options : {
             abc : { 
               text : "This is one",
-              translation : {
-                en : 'This is one'
-              } 
+              translation : 'This is one'
             },
             def : { 
               text : "this is another",
-              translation : {
-                e : 'This is another'
-              }
+              translation : 'This is another'
             }
           }
         },
@@ -54,15 +50,11 @@ export default {
           options : {
             ghi : { 
               text : "Banana",
-              translation : {
-                en : 'Banana'
-              }
+              translation : 'Banana'
             },
             jkl : { 
               text : "Yellow",
-              translation : {
-                en : "Yellow"
-              }
+              translation : "Yellow"
             }
           }
         },
@@ -75,15 +67,11 @@ export default {
           options : {
             mno : { 
               text : "My name is Sam", 
-              translation : {
-                en : 'My name is Sam'
-              } 
+              translation : 'My name is Sam'
             },
             pqr : { 
               text : "My name is Jocelyn",
-              translation : {
-                en : 'My nam is Jocelyn'
-              } 
+              translation : 'My nam is Jocelyn'
             }
           }
         },
