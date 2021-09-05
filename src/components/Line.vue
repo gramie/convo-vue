@@ -29,7 +29,8 @@ export default {
       key: "nothing"
     }
   },
-  mounted () {
+  mounted() {
+    console.log("loaded");
   },
   methods : {
     getSelectedText() {

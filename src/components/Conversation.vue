@@ -1,8 +1,7 @@
 <template>
   <h2>{{convoName}}</h2>
-  <button type="button">Restart</button>
-
-  <audio controls src="http://www.stillbrook.org/audio/office_ambience.mp3" />
+  <button type="button" @click="restart()">Restart</button>
+  <audio controls src="https://www.stillbrook.org/audio/office_ambience.mp3" />
   <div v-for="convoline in lines">
     <Line v-bind:line="convoline" v-if="convoline.visible" @selectLine="onNextLine" />
   </div>
@@ -85,6 +84,15 @@ export default {
     onNextLine(nextLineIndex) {
       if (nextLineIndex) {
         this.lines[nextLineIndex].visible = true;
+      }
+    },
+    restart() {
+      const lines = this.lines;
+      for (let i = 0; i < lines.length; i++) {
+        lines[i].selected = '';
+        if (i > 0) {
+          lines[i].visible = false;
+        }
       }
     }
   },
