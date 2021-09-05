@@ -33,7 +33,7 @@ export default {
       this.isTextBlurred = false;
     },
     selectLine() {
-      this.$emit('line-selected');
+      this.$emit('line-selected', this.id);
     }
   }
 }

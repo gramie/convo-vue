@@ -2,6 +2,7 @@
   <div>
     <div v-bind:class="getSpeaker()">
       <div class="line selected-line" v-if="line.selected">
+          <SingleLine v-bind:line="line.options[line.selected]" v-bind:id="line.selected" v-bind:speaker="this.speaker" v-bind:displayClearText="false" />
       </div>
       <div v-else>
         <template v-for="(option, id) in line.options">
