@@ -1,5 +1,6 @@
 <template>
   <h2>{{convoName}}</h2>
+  <button type="button">Restart</button>
 
   <audio controls src="http://www.stillbrook.org/audio/office_ambience.mp3" />
   <div v-for="convoline in lines">
@@ -8,7 +9,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'; 
 import Line from './Line.vue'
 
 export default {
